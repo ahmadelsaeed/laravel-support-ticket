@@ -20,7 +20,7 @@ return [
         /**
          * Categories table for the tickets
          */
-        'categories' => 'categories',
+        'categories' => 'ticket_categories',
         'category_id' => 'category_id',
         /**
          * Labels table for the tickets

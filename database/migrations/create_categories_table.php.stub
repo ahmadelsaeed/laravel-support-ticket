@@ -10,7 +10,7 @@ return new class extends Migration
 {
     public function up()
     {
-        $tableName = config('laravel_ticket.table_names.categories', 'categories');
+        $tableName = config('laravel_ticket.table_names.categories', 'ticket_categories');
 
         Schema::create($tableName, function (Blueprint $table) {
             $table->id();

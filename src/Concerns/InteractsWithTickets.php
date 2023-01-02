@@ -3,10 +3,24 @@
 namespace Coderflex\LaravelTicket\Concerns;
 
 use Coderflex\LaravelTicket\Enums\Status;
+use Coderflex\LaravelTicket\Models\TicketCategory;
 use Illuminate\Database\Eloquent\Model;
 
 trait InteractsWithTickets
 {
+    /**
+     * unprocessed the ticket
+     *
+     * @return self
+     */
+    public function updateTicketHistory($user,$status)
+    {
+        TicketCategory::create([
+            'status' => $status,'fileable_type'=>get_class($user),'fileable_id'=>$user->id
+        ]);
+
+        return $this;
+    }
     /**
      * unprocessed the ticket
      *
@@ -20,6 +34,8 @@ trait InteractsWithTickets
 
         return $this;
     }
+
+
         
     /**
      * waitDepartmentResponse the ticket

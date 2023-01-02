@@ -17,14 +17,12 @@ return new class extends Migration
 
     public function up()
     {
-        $category_id = config('laravel_ticket.table_names.category_id', 'category_id');
 
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->id();
             $table->uuid('uuid')->nullable();
             $table->foreignId('user_id');
             $table->foreignId('admin_id');
-            $table->foreignId($category_id);
             $table->string('name');
             $table->string('phone');
             $table->string('message')->nullable();

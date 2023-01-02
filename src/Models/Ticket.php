@@ -83,7 +83,7 @@ class Ticket extends Model
         $table = config('laravel_ticket.table_names.category_ticket', 'category_ticket');
 
         return $this->belongsToMany(
-            Category::class,
+            TicketCategory::class,
             $table['table'],
             $table['columns']['ticket_foreign_id'],
             $table['columns']['category_foreign_id'],
