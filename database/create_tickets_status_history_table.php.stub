@@ -1,0 +1,32 @@
+<?php
+
+namespace Coderflex\LaravelTicket\Database\Factories;
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up()
+    {
+        Schema::create('tickets_status_history', function (Blueprint $table) {
+            $table->id();
+            $table->tinyInteger('status')->default('0');
+            $table->string('fileable_type')->nullable();
+            $table->unsignedBigInteger('fileable_id')->nullable();
+            $table->timestamps();
+            $table->softDeletes();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('tickets_status_history');
+    }
+};

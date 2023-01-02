@@ -1,24 +1,25 @@
 {
-    "name": "coderflex/laravel-ticket",
-    "description": "Laravel Ticket System, to help you manage your tickets eaisly",
+    "name": "ahmadelsaeed/laravel-support-ticket",
+    "description": "Laravel Support Ticket System",
     "keywords": [
-        "Coderflex",
         "laravel",
+        "support-ticket",
         "laravel-ticket"
     ],
-    "homepage": "https://github.com/coderflexx/laravel-ticket",
+    "homepage": "https://github.com/ahmadelsaeed/laravel-support-ticket",
     "license": "MIT",
     "authors": [
         {
-            "name": "Oussama Sid",
-            "email": "oussama@coderflex.com",
+            "name": "Ahmad Elsaeed",
+            "email": "ahmad.elsaeed.ali@gmail.com",
             "role": "Developer"
         }
     ],
     "require": {
         "php": "^8.1",
-        "spatie/laravel-package-tools": "^1.13.0",
-        "illuminate/contracts": "^9.0"
+        "illuminate/contracts": "^9.0",
+        "livewire/livewire": "^2.10",
+        "spatie/laravel-package-tools": "^1.13.0"
     },
     "require-dev": {
         "laravel/pint": "^1.0",

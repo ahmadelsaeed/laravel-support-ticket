@@ -8,18 +8,47 @@ use Illuminate\Database\Eloquent\Model;
 trait InteractsWithTickets
 {
     /**
-     * Archive the ticket
+     * unprocessed the ticket
      *
      * @return self
      */
-    public function archive(): self
+    public function unprocessed(): self
     {
         $this->update([
-            'status' => Status::ARCHIVED->value,
+            'status' => Status::UNPROCESSED->value,
         ]);
 
         return $this;
     }
+        
+    /**
+     * waitDepartmentResponse the ticket
+     *
+     * @return self
+     */
+    public function waitDepartmentResponse(): self
+    {
+        $this->update([
+            'status' => Status::WAITDEPARTMENTRESPONSE->value,
+        ]);
+
+        return $this;
+    }
+
+    /**
+     * solved the ticket
+     *
+     * @return self
+     */
+    public function solved(): self
+    {
+        $this->update([
+            'status' => Status::SOLVED->value,
+        ]);
+
+        return $this;
+    }
+
 
     /**
      * Close the ticket
@@ -54,9 +83,19 @@ trait InteractsWithTickets
      *
      * @return bool
      */
-    public function isArchived(): bool
+    public function isUnProcessed(): bool
     {
-        return $this->status == Status::ARCHIVED->value;
+        return $this->status == Status::UNPROCESSED->value;
+    }
+
+    /**
+     * Determine if the ticket is archived
+     *
+     * @return bool
+     */
+    public function isWaitDepartmentResponse(): bool
+    {
+        return $this->status == Status::WAITDEPARTMENTRESPONSE->value;
     }
 
     /**

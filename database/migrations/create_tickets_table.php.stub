@@ -8,21 +8,34 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    public $tableName;
+
+    public function __construct()
+    {
+        $this->tableName = config('laravel_ticket.table_names.tickets', 'tickets');
+    }
+
     public function up()
     {
-        $tableName = config('laravel_ticket.table_names.tickets', 'tickets');
+        $category_id = config('laravel_ticket.table_names.category_id', 'category_id');
 
-        Schema::create($tableName, function (Blueprint $table) {
+        Schema::create($this->tableName, function (Blueprint $table) {
             $table->id();
             $table->uuid('uuid')->nullable();
             $table->foreignId('user_id');
-            $table->string('title');
+            $table->foreignId('admin_id');
+            $table->foreignId($category_id);
+            $table->string('name');
+            $table->string('phone');
             $table->string('message')->nullable();
             $table->string('priority')->default('low');
-            $table->string('status')->default('open');
+            $table->tinyInteger('status')->default('0');
             $table->boolean('is_resolved')->default(false);
             $table->boolean('is_locked')->default(false);
+            $table->boolean('allow_notification')->default(false);
             $table->timestamps();
+            $table->unsignedBigInteger('assigned_to')->nullable()->references('id')->on('admins');
+            $table->softDeletes();
         });
     }
 
@@ -33,6 +46,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('laravel_tickets');
+        Schema::dropIfExists($this->tableName);
     }
 };

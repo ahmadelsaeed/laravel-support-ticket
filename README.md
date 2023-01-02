@@ -1,12 +1,4 @@
-<p align="center">
-    <img src="art/logo.png" alt="Laravisit Logo" width="300">
-    <br><br>
-</p>
-
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/coderflex/laravel-ticket.svg?style=flat-square)](https://packagist.org/packages/coderflex/laravel-ticket)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/coderflexx/laravel-ticket/run-tests.yml?branch=main&label=test)](https://github.com/coderflexx/laravel-ticket/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/coderflexx/laravel-ticket/phpstan.yml?branch=main&label=code%20style)](https://github.com/coderflexx/laravel-ticket/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/coderflex/laravel-ticket.svg?style=flat-square)](https://packagist.org/packages/coderflex/laravel-ticket)
+# Laravel Support Ticket
 
 - [Introduction](#introduction)
 - [Installation](#installation)
@@ -32,13 +24,13 @@
 
 ## Introduction
 __Laravel Ticket__ package, is a Backend API to handle your ticket system, with an easy way.
-
+IT IS Based On [coderflexx/laravel-ticket](https://github.com/coderflexx/laravel-ticket "coderflexx/laravel-ticket")
 ## Installation
 
 You can install the package via composer:
 
 ```bash
-composer require coderflex/laravel-ticket
+composer require ahmadelsaeed/laravel-support-ticket
 ```
 
 ## Configuration

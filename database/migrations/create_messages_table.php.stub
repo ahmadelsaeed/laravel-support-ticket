@@ -15,10 +15,13 @@ return new class extends Migration
 
         Schema::create($tableName['table'], function (Blueprint $table) use ($tableName) {
             $table->id();
-            $table->foreignId($tableName['columns']['user_foreing_id']);
+            $table->string('fileable_type')->nullable();
+            $table->unsignedBigInteger($tableName['columns']['user_foreing_id'])->nullable();
             $table->foreignId($tableName['columns']['ticket_foreing_id']);
             $table->text('message');
+            $table->boolean('is_visible')->default(true);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 };

@@ -21,6 +21,7 @@ return [
          * Categories table for the tickets
          */
         'categories' => 'categories',
+        'category_id' => 'category_id',
         /**
          * Labels table for the tickets
          */
@@ -39,7 +40,7 @@ return [
              * @see https://laravel.com/docs/9.x/eloquent-relationships#one-to-many
              */
             'columns' => [
-                'user_foreing_id' => 'user_id',
+                'user_foreing_id' => 'fileable_id',
                 'ticket_foreing_id' => 'ticket_id',
             ],
         ],
