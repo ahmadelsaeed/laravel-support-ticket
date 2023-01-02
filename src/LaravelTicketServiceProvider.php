@@ -20,8 +20,9 @@ class LaravelTicketServiceProvider extends PackageServiceProvider
             ->hasMigrations(
                 'create_tickets_table',
                 'create_tickets_status_history_table',
+                'create_tickets_assigned_history_table',
                 'create_messages_table',
-                'create_categories_table',
+                'create_ticket_categories_table',
                 'create_labels_table',
                 'create_category_ticket_table',
                 'create_label_ticket_table',

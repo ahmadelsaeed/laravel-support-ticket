@@ -17,6 +17,16 @@ trait TicketScope
     {
         return $builder->where('status', Status::CLOSED->value);
     }
+    
+    /**
+     * Get tickets By Status
+     *
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeStatus(Builder $builder,$status): Builder
+    {
+        return $builder->where('status', $status);
+    }
 
     /**
      * Get opened tickets
