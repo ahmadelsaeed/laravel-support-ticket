@@ -15,7 +15,7 @@ trait HasTickets
      */
     public function tickets(): HasMany
     {
-        return $this->hasMany(Ticket::class, 'user_id');
+        return $this->hasMany(Ticket::class);
     }
 
     /**
@@ -25,6 +25,6 @@ trait HasTickets
      */
     public function messages(): HasMany
     {
-        return $this->hasMany(Message::class, 'user_id');
+        return $this->hasMany(Message::class);
     }
 }
